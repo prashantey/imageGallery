@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+}
+
+html {
+    font-size: 1.5vmin;
+    font-family: "Roboto", sans-serif;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.top-bar i {
+    padding: 20px;
+    font-size: 3vmin;
+    cursor: pointer;
+    color: #fff;
+}
+
+h1 {
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    font-size: 6vmin;
+}
+
+.my-images {
+    font-size: 10vmin;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+}
+
+.my-images p {
+    font-size: 3vmin;
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+img:hover {
+    filter: contrast(1.2);
+    transform: scale(1.01);
+}
+
+.image-gallery,
+.trash-image-gallery {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.delete-button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.delete-button i {
+    font-size: 15px;
+    color: #000;
+}
+
+.trash,
+.folder{
+    font-size: 10vmin;
+    width: vmin;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.trash img {
+    width: 100px;
+    height: 100px;
+}
+
+.arrow {
+    position: fixed;
+    top: 50%;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+.empty-message {
+    color: white;
+    font-size: 4vmin;
+    text-align: center;
+}
+
+.restore-button,
+.permanent-delete-button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.restore-button {
+    left: 5px;
+}
+
+.permanent-delete-button {
+    left: 45px;
+}
+
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    z-index: 1000;
+    background-color: black;
+}
+
+.arrow {
+    position: fixed;
+    top: 50%;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+
+
+
+@media (width <=700px) {
+
+    .image-gallery,
+    .trash-image-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+
+    }
+
+    img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .delete-button i {
+        font-size: 1.4rem;
+    }
+
+    .restore-button,
+    .permanent-delete-button {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (width <=300px) {
+
+    .image-gallery,
+    .trash-image-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 100px);
+    }
+
+    img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .delete-button i {
+        font-size: 1.2rem;
+    }
+
+}
